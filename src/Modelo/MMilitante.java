@@ -12,23 +12,38 @@ import javax.swing.JOptionPane;
  * @author ALFREDO CACONDA
  */
 public class MMilitante {
-    private String id_militante;
+    private int id_militante;
     private String nome;
     private String genero;
     private String data_nasc;
-    private String endereco;
+    private MEndereco endereco;
     private String data_ingresso;
-    private int telefone;
+    private String telefone;
     private String emal;
     private String bi;
     private String foto;
-    private String id_nivel;
+    private Mnivel id_nivel;
 
-    public String getId_militante() {
+    public MEndereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(MEndereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public Mnivel getId_nivel() {
+        return id_nivel;
+    }
+
+    public void setId_nivel(Mnivel id_nivel) {
+        this.id_nivel = id_nivel;
+    }
+    public int getId_militante() {
         return id_militante;
     }
 
-    public void setId_militante(String id_militante) {
+    public void setId_militante(int id_militante) {
         this.id_militante = id_militante;
     }
 
@@ -56,14 +71,6 @@ public class MMilitante {
         this.data_nasc = data_nasc;
     }
 
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
     public String getData_ingresso() {
         return data_ingresso;
     }
@@ -72,11 +79,11 @@ public class MMilitante {
         this.data_ingresso = data_ingresso;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -104,15 +111,12 @@ public class MMilitante {
         this.foto = foto;
     }
 
-    public String getId_nivel() {
-        return id_nivel;
-    }
-
-    public void setId_nivel(String id_nivel) {
-        this.id_nivel = id_nivel;
-    }
     
     public void mensagem(String sms){
         JOptionPane.showMessageDialog(null, sms);
     }
+    @Override
+       public String toString(){
+           return getNome();
+       }
 }
